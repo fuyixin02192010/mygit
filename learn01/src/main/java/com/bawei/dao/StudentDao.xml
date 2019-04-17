@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bawei.dao.StudentDao">
+	<select id="getStuList" resultType="map">
+		select * from student where sname like '%${value}%'
+	</select>
+	<!--添加  -->
+	<insert id="addStu">
+		insert into student set sname=#{sname},sex=#{sex}
+	</insert>
+	<!--通过Id回显  -->
+	<select id="getStuById" resultType="student">
+		select * from student where sid=${value}
+	</select>
+	<!--修改 -->
+	<update id="update">
+		update student set sname=#{sname},sex=#{sex} where sid=${sid}
+	</update>
+</mapper>
