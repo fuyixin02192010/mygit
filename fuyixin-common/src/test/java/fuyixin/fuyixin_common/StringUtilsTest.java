@@ -17,5 +17,7 @@ public class StringUtilsTest {
 		String src3="709624950@qq.com";
 		boolean email = stringUtil.isEmail(src3);
 		System.out.println(email);
+		String newStr=stringUtil.reverse("12345");
+		System.out.println(newStr);
 	}
 }
